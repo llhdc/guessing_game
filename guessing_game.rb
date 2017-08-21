@@ -20,9 +20,8 @@ while guess != answer
   end
 
   if tries == 5
-    p "Sorry. Game over. You couldn't figure it out, even after 5 tries. You're clearly not very good at this. Oh, come on, don't cry about it. I'm sorry. Look, I'm stuck in this rb file and I'm pretty bitter about that. Tell you what. I'll give you another 5 chances. Have at it: "
-    guess = gets.to_i
-    tries = 1
+    p "Sorry. Game over. You couldn't figure it out, even after 5 tries. You're clearly not very good at this. Oh, come on, don't cry about it. Sorry not sorry. Feel free to play again...when you grow up..."
+    abort
   end
 
   if guess == answer
