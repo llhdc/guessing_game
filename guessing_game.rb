@@ -19,7 +19,8 @@ while guess != answer
     tries += 1
   elsif guess > 100
     p "You're way too hot. Take a chill pill. Guess between 1 and 100: "
-
+    guess = gets.to_i
+    tries += 1
   end
 
   if tries == 5
