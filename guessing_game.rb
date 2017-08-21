@@ -5,17 +5,21 @@ tries = 1
 
 while guess != answer
 
-  if guess.to_s == true
-    p "That's cute, but that's not a number. Try again."
+  if guess == 0
+    p "That's cute, but that's either 0 or not a number. Try again:"
+    guess = gets.to_i
     tries += 1
   elsif guess < answer
     p "You're cold. Real cold. Guess higher: "
     guess = gets.to_i
     tries += 1
   elsif guess > answer
-    p "You're way too hot. Take a chill pill. Guess lower: "
+    p "Easy. Guess lower: "
     guess = gets.to_i
     tries += 1
+  elsif guess > 100
+    p "You're way too hot. Take a chill pill. Guess between 1 and 100: "
+
   end
 
   if tries == 5
