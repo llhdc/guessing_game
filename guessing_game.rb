@@ -27,6 +27,7 @@ while guess != answer
   if guess == answer
     p "Guess today is your lucky day. Play again and see if you're REALLY lucky or just flukey. Go on: "
     guess = gets.to_i
+    answer = rand(1 .. 100)
     tries = 1
   end
 end
