@@ -9,11 +9,11 @@ while guess != answer
     p "That's cute, but that's not a number. Try again."
     tries += 1
   elsif guess < answer
-    p "You're cold. Real cold. Guess again: "
+    p "You're cold. Real cold. Guess higher: "
     guess = gets.to_i
     tries += 1
   elsif guess > answer
-    p "You're way too hot. Take a chill pill. Try again: "
+    p "You're way too hot. Take a chill pill. Guess lower: "
     guess = gets.to_i
     tries += 1
   end
