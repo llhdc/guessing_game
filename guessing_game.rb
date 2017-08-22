@@ -28,7 +28,7 @@ while guess != answer
     guess = get_guess
     tries += 1
 
-  elsif guess > answer
+  elsif guess > answer && guess < 100
     puts "Easy. Little to eager there, champ. Guess lower: "
     guess = get_guess
     tries += 1
@@ -41,6 +41,11 @@ while guess != answer
 
   if guess == answer
     puts "Guess today is your lucky day. You...you win! I don't like winners like you because I can't hurl insults at them. Bye."
+    abort
+  end
+
+  if guess == answer && tries == 1
+    puts "Hmmm...you think you're cool don't you? Got it on the first try. Dumb luck, surely. Play again and see if you're REALLY cool, smart, lucky and successful in life. I dare ya."
     abort
   end
 
