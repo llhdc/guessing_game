@@ -1,25 +1,36 @@
+def is_valid(num)
+  if num > 100 || num < 1
+    puts "That's cute, but that's either not a number or not a valid one. I'll repeat since you seem to struggle with following instructions. Pick a number. Between 1 and 100: "
+  end
+end
+
+def get_guess
+  gets.to_i
+end
+
 p "Guess a number between 1 and 100. You have 5 chances to get it right. Don't mess this up: "
-guess = gets.to_i
+guess = get_guess
 guesses = []
 guesses.push(guess)
 answer = rand(1 .. 100)
 tries = 1
 
+
 while guess != answer
 
-  if guess == 0 || guess > 100
+  if is_valid(guess)
     puts "That's cute, but that's either not a number or not a valid one. I'll repeat since you seem to struggle with following instructions. Pick a number. Between 1 and 100: "
-    guess = gets.to_i
+    guess = get_guess
     tries += 1
 
   elsif guess < answer
     puts "You're cold. Real cold. Guess higher: "
-    guess = gets.to_i
+    guess = get_guess
     tries += 1
 
-  elsif guess > answer && guess < 100
+  elsif guess > answer
     puts "Easy. Little to eager there, champ. Guess lower: "
-    guess = gets.to_i
+    guess = get_guess
     tries += 1
   end
 
