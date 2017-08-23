@@ -1,14 +1,12 @@
-def is_valid(num)
-  if num > 100 || num < 1
-    puts "That's cute, but that's either not a number or not a valid one. I'll repeat since you seem to struggle with following instructions. Pick a number. Between 1 and 100: "
-  end
+def is_invalid
+  puts "That's cute, but that's either not a number or not a valid one. I'll repeat since you seem to struggle with following instructions. Pick a number. Between 1 and 100: "
 end
 
 def get_guess
   gets.to_i
 end
 
-p "Guess a number between 1 and 100. You have 5 chances to get it right. Don't mess this up: "
+puts "Guess a number between 1 and 100. You have 5 chances to get it right. Don't mess this up: "
 guess = get_guess
 guesses = []
 guesses.push(guess)
@@ -18,8 +16,8 @@ tries = 1
 
 while guess != answer
 
-  if is_valid(guess)
-    puts "That's cute, but that's either not a number or not a valid one. I'll repeat since you seem to struggle with following instructions. Pick a number. Between 1 and 100: "
+  if guess < 1 || guess > 100
+    is_invalid
     guess = get_guess
     tries += 1
 
