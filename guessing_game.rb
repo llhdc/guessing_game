@@ -16,26 +16,28 @@ tries = 1
 
 while guess != answer
 
-  if guess < 1 || guess > 100
-    is_invalid
-    guess = get_guess
-    tries += 1
+  case
+    when guess < 1 || guess > 100
+      is_invalid
+      guess = get_guess
+      tries += 1
 
-  elsif guess < answer
-    puts "You're cold. Real cold. Guess higher: "
-    guess = get_guess
-    tries += 1
+    when guess < answer
+      puts "You're cold. Real cold. Guess higher: "
+      guess = get_guess
+      tries += 1
 
-  elsif guess > answer && guess < 100
-    puts "Easy. Little to eager there, champ. Guess lower: "
-    guess = get_guess
-    tries += 1
-  end
+    else guess > answer && guess < 100
+      puts "Easy. Little to eager there, champ. Guess lower: "
+      guess = get_guess
+      tries += 1
 
-  if tries == 5
-    puts "Sorry. Game over. You couldn't figure it out, even after 5 tries. You're clearly not very good at this. Oh, come on, don't cry about it. Sorry not sorry. Feel free to play again...when you grow up..."
-    abort
-  end
+    end
+
+    if tries == 5
+      puts "Sorry. Game over. You couldn't figure it out, even after 5 tries. You're clearly not very good at this. Oh, come on, don't cry about it. Sorry not sorry. Feel free to play again...when you grow up..."
+      abort
+    end
 
   if guess == answer
     puts "Guess today is your lucky day. You...you win! I don't like winners like you because I can't hurl insults at them. Bye."
