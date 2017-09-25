@@ -16,7 +16,7 @@ tries = 1
 
 while guess != answer
 
-  if guess < 1 || guess > 100
+  if guess < 1 || guess >= 100
     is_invalid
     guess = get_guess
     tries += 1
